@@ -1,10 +1,10 @@
 # docker_test_env
 
-This is the dockerfile for building a test environment of my codes. I am using this environment to check the operation of my codes. The test environment uses the docker image of Ubuntu 20.04. The packages needed to run my codes are automatically installed so you can compile and run the code and visualize the results by only starting the container image. Intel C compiler is also available. The image size becomes about 9GB. 
+This is the dockerfile for building a test environment of my codes. I am using this environment to check the operation of my codes. The docker image of Ubuntu 20.04 is used this test environment. The packages needed to run my codes are automatically installed so you can compile and run the code and visualize the results by only starting the image. Intel C compiler is also available. The image size becomes about 9GB. 
 
 ## Usage  
 
-1. change the user settings (user name and IDs) in the Dockerfile as needed.  
+1. edit the user settings (user name and IDs) in the Dockerfile as needed.  
    The default settings are "user" for the user name, "user" for the group name, "1000" for the user ID, and "1000" for the group ID. 
    
 2. type 'docker build . -t image_name' to build image.  
