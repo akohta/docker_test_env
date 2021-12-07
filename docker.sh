@@ -16,10 +16,10 @@ if [ "$1" = "build" ]; then
    $docker_command build . -t $image_name
 elif [ "$1" = "run" ]; then
    xhost + localhost
-   $docker_command run -d -it --name $image_name --hostname=$container_hostname --net=$network\
+   $docker_command run -itd --name $image_name --hostname=$container_hostname --net=$network\
                    -v $local_share_folder:$container_share_folder:Z\
                    -e DISPLAY=$host_display -v $x11_soc:$x11_soc:Z\
-                   localhost/$image_name /bin/bash
+                   localhost/$image_name
    $docker_command exec -it $image_name /bin/bash
 elif [ "$1" = "login" ]; then
    $docker_command exec -it $image_name /bin/bash
@@ -45,4 +45,3 @@ else
    echo "        $0 del_cnt   ( delete container )"
    echo "        $0 del_img   ( delete image )"
 fi
-
